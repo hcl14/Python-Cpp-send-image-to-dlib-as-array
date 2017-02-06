@@ -1,2 +1,16 @@
-# Python-Cpp-send-image-to-dlib-as-array
-Send image from custom array to C++ dlib code from C++ or Python
+# Send image from C++ and Python to dlib
+
+As long as dlib NN api is not supported in Python, I wrote a simple python and C++ wrapper to send image into dlib C++ code from arbitrary container (I have `int*` for Python)
+
+## Getting Started
+
+`dlib_image_from_array.h` does not need any dependency except dlib. Examples in the corresponding subfolders show usage in C++ and Python, I used OnenCV to quickly create different matrices. The code accepts `int *` data along with dimension, depth and channel data, but you can easily use any peculiar container by modifying variable types and `navigate_in_array()` function. <br />
+
+The code is based on Dlib's `png_loader.h` and does not support 16-bit image data except non-alpha grayscale. 16-bit pixel values are converted to 8-bit during input, see https://github.com/davisking/dlib/issues/428
+
+### Prerequisites and Installing
+
+Use cmake scripts to compile. Tested on Dlib 19, OpenCV3, Python 2.7 and Python 3.5.
+
+
+
