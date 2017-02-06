@@ -9,8 +9,6 @@
 // It accepts image is single one-dimensional contiguous integer array, but you can easily modify it for your data type,
 // Just replace 'int* original_img' with your type and rewrite function navigate_in_array() to return the pointer to the array[4] which contains integer r,g,b,a pixel data
 
-// If you don't want OpenMP, remove all "#pragma parallel ..." in the code, but it gives you multi-core speedup
-
 #include <vector>
 #include <dlib/image_loader/png_loader.h>
 
