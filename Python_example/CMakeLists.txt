@@ -2,11 +2,10 @@
  project( dlib_face )
  set(CMAKE_BUILD_TYPE Release) # VERY essential for dlib!
 
- find_package( OpenCV REQUIRED )
- include_directories( ${OpenCV_INCLUDE_DIRS}) 
+ 
  #add_executable( dlib_face dlib_face.cpp )
  ADD_LIBRARY(dlib_face SHARED dlib_face.cpp) # SHARED makes .so
- target_link_libraries( dlib_face ${OpenCV_LIBS})  
+
  
  
  target_link_libraries( dlib_face dlib) 
@@ -66,5 +65,5 @@ if(COMPILER_SUPPORTS_CXX11)
     # instructions -msse4 -mavx needed for dlib to run faster
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread -msse -msse2 -msse3 -msse4 -mavx")
 else()
-        message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++14 support. Please use a different C++ compiler.")
+        message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
