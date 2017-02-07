@@ -15,4 +15,6 @@ Use cmake scripts to compile. Compile shared library (.so) to import into Python
 Tested on Dlib 19, OpenCV3, Python 2.7 and Python 3.5.
 
 
+Upd: Recently I found this question http://stackoverflow.com/questions/41991651/how-to-assign-memory-images-to-a-dlib-array2d-or-image
 
+so may be I will try to make better implementation sometime, based on these hints.
